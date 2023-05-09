@@ -25,7 +25,7 @@ public class EmployeeService {
         employees.add(employee);
         return employee;
     }
-    public Employee del (String firstName, String lastName){
+    public Employee remove (String firstName, String lastName){
         Employee employee = new Employee(firstName, lastName);
         if (!employees.contains(employee)){
             throw new EmployeeNotFoundException();
@@ -40,5 +40,8 @@ public class EmployeeService {
             throw new EmployeeNotFoundException();
         }
     return employee;
+    }
+    public List<Employee> getAll() {
+        return employees;
     }
 }
